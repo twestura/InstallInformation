@@ -1,0 +1,162 @@
+\documentclass{article}
+
+\author{Travis Westura}
+\title{New Computer Software Setup}
+\date{\today}
+
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\begin{document}
+
+\maketitle
+
+Whenever I get a new computer I spend time installing a variety of software.
+This guide is intended to serve as a reminder about what I install and how to install it.
+In writing this guide I hope to save myself much time going through StackOverflow posts.
+
+\section{Web Browsers}
+
+First we need to find something better than Internet Explorer.
+Firefox is downloaded from here: \url{https://www.mozilla.org/en-US/firefox/new/}.
+Google Chrome is downloaded from here: \url{https://www.google.com/chrome/browser/}.
+
+\section{Git}
+Git can be downloaded from here: \url{http://git-scm.com/downloads}.
+Run the installer.
+After installing open a git bash shell.
+Run the commands git config --global user.name "Travis" and git config --global user.email "twestura@gmail.com".
+
+Optionally we could install GitHub for Windows and do something to save my password.
+
+\section{Sublime Text 2}
+I use Sublime Text 2 without a license, as doing so is free and the annoying pop-up message is infrequent.
+It can be downloaded here: \url{http://www.sublimetext.com/2}.
+Just download the Windows 64 bit version.
+Simply run the installer after downloading.
+
+\section{Emacs}
+Ahh yes: Emacs.
+Let's get it running on Windows.
+I downloaded Emacs by using the link on the instructions for setting up \LaTeX on Windows here:
+	\url{http://www.latexbuch.de/install-latex-windows-7/#x1-110003.1}.
+\footnote{
+	This version is probably old.
+	There is likely a new version simply on the emacs website.
+	There is no installer required, so I should be able to unzip the zip folder and run it.
+	I am not sure what a precompiled version, but I assume that I would need to compile it.
+	Anyway I should be able to use a version that is not precompiled.
+
+	Actually, it seems as though the link is updated to the latest version.
+	However, it would not hurt to check whenever I want to download something.
+}
+I unzip everythin on my desktop and create a folder called emacs in my Program Files.
+Copy everything from the unzipped file into this folder.
+There is an installer addpm.exe in bin that can be run, although I am not sure what it does.
+
+I may then need to set the HOME environment varaible to be C:\textbackslash{}Users\textbackslash{}Travis,
+	as described here:
+	\url{https://www.gnu.org/software/emacs/manual/html_node/emacs/Windows-HOME.html}.
+I may also want to add emacs to my path variable.
+To run emacs in the command shell, the command is emacs -nw, with the nw meaning nonwindowed.
+
+I will also need to create a .emacs file.
+I cannot create file names that begin with periods in a file explorer.
+But I can simply create the file using emacs.
+To add line numbers by default, add the line (global-linum-mode 1) to the .emacs file.
+
+For instructions on how to set up \LaTeX with emacs, see \cref{subsubsec:LaTeX_Emacs}.
+
+\section{\LaTeX}
+
+\subsection{Installation}
+
+I use the TexLive distribution that can be obtained here:
+	\url{https://www.tug.org/texlive/acquire-netinstall.html}.
+Use the install-tl-windows.exe installer.
+The installation can take quite some time.
+
+I use TexLive to be consistant across multiple platforms, as MikTex only supports Windows.
+
+There may be something else that needs to be installed called getnonfreefonts.
+The link is \url{https://www.tug.org/fonts/getnonfreefonts/}.
+Download the file and navigate to the directoy containing it in a command line.
+Then run texlua install-getnonfreefonts getnonfreefonts-sys-a.
+
+\subsection{Text Editors}
+
+I use several text editors with \LaTeX.
+In the following I describe how to get \LaTeX to work with these editors.
+Other installation and setup instructions for these editors can be found in the respective sections for the editors.
+
+\subsubsection{Sublime}
+
+\subsubsection{Emacs}
+\label{subsubsec:LaTeX_Emacs}
+
+To use \LaTeX, we want to set up AUC\TeX.
+We can download it here: \url{http://www.gnu.org/software/auctex/download-for-windows.html}.
+Unzip the folder and make sure the contents are contained in a folder called auctex.
+Then make sure this folder is contained inside the emacs folder.
+A simple test pdf document can then be compiled using C-c C-c RET.
+Several sites said to install Ghostscript, so I downloaded it from here:
+	\url{http://www.ghostscript.com/download/gsdnld.html}.
+I set up a GhostScript printer with the instructions from here:
+	\url{http://www.latexbuch.de/install-latex-windows-7/#x1-110003.1}.
+I also downloaded GSView from here: \url{http://pages.cs.wisc.edu/~ghost/gsview/get50.htm}.
+
+The answer to this question looks amazing:
+	\url{http://tex.stackexchange.com/questions/50827/a-simpletons-guide-to-tex-workflow-with-emacs}.
+
+I downloaded and installed ASpell from here: \url{http://aspell.net/win32/}.
+
+There are many changes that are made in the emacs init file to facilitate working with \LaTeX.
+
+\section{Java}
+
+Download the latest version of Java from the Oracle downloads page:
+ 	\url{http://www.oracle.com/technetwork/java/javase/downloads/index.html}.
+To check to see if the installation was successful, open a command line and execute java -version.
+This command should work.
+Next execute javac -version.
+If this command does not work, then the location of javac.exe needs to be added to the path.
+Right-click on Computer, go to the Advanced System Settings, and click on Environment Variables.
+There should be a variable named Path that we need to edit.
+Select Path and click edit, or create a new variable named Path if one does not exist.
+Append to the variable the file path leading to javac.
+This path should end with the bin folder in the jdk that contains javac.
+Afterwards check that the Path is correct by running the command javac -version again.
+The command line may need to be restarted for the change in Environment Variable to take effect.
+
+\section{Eclipse}
+
+I use Eclipse when working with Java and Python.
+This section covers how to set up Eclipse to work with Java and explains the plugins I use for Java.
+For instructions using PyDev see \cref{subsec:PyDev}.
+
+\subsection{Installation}
+Eclipse can be downloaded here: \url{https://www.eclipse.org/downloads/}.
+Simply unzip the folder and it should work; no installer should be necessary.
+
+\subsection{Plugins}
+
+\section{Python}
+
+To install python, I need to install both the language itself and several additional modules.
+I also need to set up PyDev with Eclipse.
+
+\subsection{Installation}
+
+\subsection{PyDev}
+\label{subsec:PyDev}
+
+\subsection{Other Python Modules}
+
+I need to add several other python modules to their respective folders.
+
+\subsubsection{PyLint}
+
+\subsubsection{Coverage}
+
+\end{document}
