@@ -8,6 +8,13 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 
+% This macros broke when a url contained a #.
+\newcommand{\web}[2]{
+	\begin{center}
+		\url{#1}{#2}
+	\end{center}
+}
+
 \begin{document}
 
 \maketitle
@@ -19,11 +26,14 @@ In writing this guide I hope to save myself much time going through StackOverflo
 \section{Web Browsers}
 
 First we need to find something better than Internet Explorer.
-Firefox is downloaded from here: \url{https://www.mozilla.org/en-US/firefox/new/}.
-Google Chrome is downloaded from here: \url{https://www.google.com/chrome/browser/}.
+Firefox is downloaded from here: 
+	\web{https://www.mozilla.org/en-US/firefox/new/}{.}
+Google Chrome is downloaded from here:
+	\web{https://www.google.com/chrome/browser/}.
 
 \section{Git}
-Git can be downloaded from here: \url{http://git-scm.com/downloads}.
+Git can be downloaded from here:
+	\web{http://git-scm.com/downloads}.
 Run the installer.
 After installing open a git bash shell.
 Run the commands git config --global user.name "Travis" and git config --global user.email "twestura@gmail.com".
@@ -32,7 +42,8 @@ Optionally we could install GitHub for Windows and do something to save my passw
 
 \section{Sublime Text 2}
 I use Sublime Text 2 without a license, as doing so is free and the annoying pop-up message is infrequent.
-It can be downloaded here: \url{http://www.sublimetext.com/2}.
+It can be downloaded here:
+	\web{http://www.sublimetext.com/2}.
 Just download the Windows 64 bit version.
 Simply run the installer after downloading.
 
@@ -40,7 +51,7 @@ Simply run the installer after downloading.
 Ahh yes: Emacs.
 Let's get it running on Windows.
 I downloaded Emacs by using the link on the instructions for setting up \LaTeX on Windows here:
-	\url{http://www.latexbuch.de/install-latex-windows-7/#x1-110003.1}.
+	 \web{http://www.latexbuch.de/install-latex-windows-7/\#x1-110003.1}.
 \footnote{
 	This version is probably old.
 	There is likely a new version simply on the emacs website.
@@ -57,7 +68,7 @@ There is an installer addpm.exe in bin that can be run, although I am not sure w
 
 I may then need to set the HOME environment varaible to be C:\textbackslash{}Users\textbackslash{}Travis,
 	as described here:
-	\url{https://www.gnu.org/software/emacs/manual/html_node/emacs/Windows-HOME.html}.
+	\web{https://www.gnu.org/software/emacs/manual/html_node/emacs/Windows-HOME.html}.
 I may also want to add emacs to my path variable.
 To run emacs in the command shell, the command is emacs -nw, with the nw meaning nonwindowed.
 
@@ -73,14 +84,14 @@ For instructions on how to set up \LaTeX with emacs, see \cref{subsubsec:LaTeX_E
 \subsection{Installation}
 
 I use the TexLive distribution that can be obtained here:
-	\url{https://www.tug.org/texlive/acquire-netinstall.html}.
+	\web{https://www.tug.org/texlive/acquire-netinstall.html}.
 Use the install-tl-windows.exe installer.
 The installation can take quite some time.
 
 I use TexLive to be consistant across multiple platforms, as MikTex only supports Windows.
 
 There may be something else that needs to be installed called getnonfreefonts.
-The link is \url{https://www.tug.org/fonts/getnonfreefonts/}.
+The link is \web{https://www.tug.org/fonts/getnonfreefonts/}.
 Download the file and navigate to the directoy containing it in a command line.
 Then run texlua install-getnonfreefonts getnonfreefonts-sys-a.
 
@@ -96,27 +107,30 @@ Other installation and setup instructions for these editors can be found in the 
 \label{subsubsec:LaTeX_Emacs}
 
 To use \LaTeX, we want to set up AUC\TeX.
-We can download it here: \url{http://www.gnu.org/software/auctex/download-for-windows.html}.
+We can download it here:
+	\web{http://www.gnu.org/software/auctex/download-for-windows.html}.
 Unzip the folder and make sure the contents are contained in a folder called auctex.
 Then make sure this folder is contained inside the emacs folder.
 A simple test pdf document can then be compiled using C-c C-c RET.
 Several sites said to install Ghostscript, so I downloaded it from here:
-	\url{http://www.ghostscript.com/download/gsdnld.html}.
+	\web{http://www.ghostscript.com/download/gsdnld.html}.
 I set up a GhostScript printer with the instructions from here:
-	\url{http://www.latexbuch.de/install-latex-windows-7/#x1-110003.1}.
-I also downloaded GSView from here: \url{http://pages.cs.wisc.edu/~ghost/gsview/get50.htm}.
+	\web{http://www.latexbuch.de/install-latex-windows-7/\#x1-110003.1}.
+I also downloaded GSView from here:
+	\web{http://pages.cs.wisc.edu/~ghost/gsview/get50.htm}.
 
 The answer to this question looks amazing:
-	\url{http://tex.stackexchange.com/questions/50827/a-simpletons-guide-to-tex-workflow-with-emacs}.
+	\web{http://tex.stackexchange.com/questions/50827/a-simpletons-guide-to-tex-workflow-with-emacs}.
 
-I downloaded and installed ASpell from here: \url{http://aspell.net/win32/}.
+I downloaded and installed ASpell from here:
+	\web{http://aspell.net/win32/}.
 
 There are many changes that are made in the emacs init file to facilitate working with \LaTeX.
 
 \section{Java}
 
 Download the latest version of Java from the Oracle downloads page:
- 	\url{http://www.oracle.com/technetwork/java/javase/downloads/index.html}.
+ 	\web{http://www.oracle.com/technetwork/java/javase/downloads/index.html}.
 To check to see if the installation was successful, open a command line and execute java -version.
 This command should work.
 Next execute javac -version.
@@ -136,7 +150,8 @@ This section covers how to set up Eclipse to work with Java and explains the plu
 For instructions using PyDev see \cref{subsec:PyDev}.
 
 \subsection{Installation}
-Eclipse can be downloaded here: \url{https://www.eclipse.org/downloads/}.
+Eclipse can be downloaded here:
+	\web{https://www.eclipse.org/downloads/}.
 Simply unzip the folder and it should work; no installer should be necessary.
 
 \subsection{Plugins}
@@ -148,6 +163,16 @@ I also need to set up PyDev with Eclipse.
 
 \subsection{Installation}
 
+For installation, I use the version that we use in CS 1110.
+The install link is here:
+	\web{http://www.cs.cornell.edu/Courses/cs1110/2014fa/materials/python.php}.
+I download this version and the Cornell Extensions.
+\footnote{
+	I should at some point dig into the Cornell Extensions and figure out what modules and packages
+		they contain.
+}
+I then install Komodo Edit from the same page.
+
 \subsection{PyDev}
 \label{subsec:PyDev}
 
@@ -158,5 +183,14 @@ I need to add several other python modules to their respective folders.
 \subsubsection{PyLint}
 
 \subsubsection{Coverage}
+
+\section{Microsoft VIsual Studios}
+
+I use the Express version because it is free.
+Perhaps there is a DreamSpark thing I could do to get the Professional or Ultimate editions for free.
+The download link is here:
+	\web{http://www.microsoft.com/en-us/download/details.aspx?id=40787}.
+Download both of the files.
+Run the wdexpress\_full.exe file, which is the installer.
 
 \end{document}
