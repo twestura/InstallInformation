@@ -101,6 +101,10 @@ I use several text editors with \LaTeX.
 In the following I describe how to get \LaTeX to work with these editors.
 Other installation and setup instructions for these editors can be found in the respective sections for the editors.
 
+\subsubsection{Sumatra PDF}
+This pdf viewer is used by both Sublime and Emacs for doing forward and backwards searches of pdfs.
+	\web{http://blog.kowalczyk.info/software/sumatrapdf/download-free-pdf-viewer.html}.
+
 \subsubsection{Sublime}
 
 \subsubsection{Emacs}
@@ -123,6 +127,7 @@ Several sites said to install Ghostscript, so I downloaded it from here:
 	\web{http://www.ghostscript.com/download/gsdnld.html}.
 I set up a GhostScript printer with the instructions from here:
 	\web{http://www.latexbuch.de/install-latex-windows-7/\#x1-110003.1}.
+I should add GhostScript to my path.
 I also downloaded GSView from here:
 	\web{http://pages.cs.wisc.edu/~ghost/gsview/get50.htm}.
 
@@ -131,6 +136,10 @@ The answer to this question looks amazing:
 
 I downloaded and installed ASpell from here:
 	\web{http://aspell.net/win32/}.
+There is both an installer and a dictionary that need to be installed.
+
+There is also something called ImageMagic:
+	\web{http://imagemagick.org/script/binary-releases.php\#windows}.
 
 There are many changes that are made in the emacs init file to facilitate working with \LaTeX.
 
@@ -190,6 +199,23 @@ I need to add several other python modules to their respective folders.
 \subsubsection{PyLint}
 
 \subsubsection{Coverage}
+
+\subsection{Python and Emacs}
+
+These instructions were rather useful:
+	\web{http://www.jesshamrick.com/2012/09/18/emacs-as-a-python-ide/}.
+I install an auto complete package from here:
+	\web{http://cx4a.org/software/auto-complete/\#Latest_Stable}.
+I also need the better python mode from here:
+	\web{https://launchpad.net/python-mode}.
+Then I installed iPython with pip install ipython.
+Install rope with pip install rope.
+The next step is setting up pymacs and ropemacs.
+I have not done this step successfully.
+I would also like emacs to work with the static analysis software.
+Also with coverage.
+Next I set up a color theme (or whatever it is called):
+	\web{https://github.com/bbatsov/zenburn-emacs}.
 
 \section{Microsoft VIsual Studios}
 
